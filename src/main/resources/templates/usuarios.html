@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/cabecalho :: cabecalho('usuarios')}"></head>
+<body>
+<nav th:replace="~{fragments/cabecalho :: navegacao}"></nav>
+<main class="conteudo">
+    <p class="eyebrow">administracao</p>
+    <h1>usuarios cadastrados</h1>
+    <table class="tabela"><thead><tr><th>nome</th><th>email</th><th>perfil</th><th>status</th><th>acao</th></tr></thead><tbody><tr th:each="usuario : ${usuarios}"><td th:text="${usuario.nome}"></td><td th:text="${usuario.email}"></td><td th:text="${usuario.papel}"></td><td th:text="${usuario.ativo ? 'ativo' : 'inativo'}"></td><td><form th:action="@{/usuarios/{id}/excluir(id=${usuario.id})}" method="post"><button class="botao botao-secundario" type="submit">excluir</button></form></td></tr></tbody></table>
+</main>
+<footer th:replace="~{fragments/rodape :: rodape}"></footer>
+</body>
+</html>

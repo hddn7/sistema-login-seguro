@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:fragment="cabecalho(titulo)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${titulo} + ' | acesso'">acesso</title>
+    <link rel="stylesheet" th:href="@{/css/estilo.css}">
+</head>
+<body>
+<nav class="navegacao" th:fragment="navegacao">
+    <a class="marca" th:href="@{/}">acesso.</a>
+    <div class="menu">
+        <a th:href="@{/painel}">painel</a>
+        <a th:href="@{/usuarios}" sec:authorize="hasRole('ADMIN')">usuarios</a>
+        <form th:action="@{/logout}" method="post" sec:authorize="isAuthenticated()"><button class="botao botao-secundario" type="submit">sair</button></form>
+    </div>
+</nav>

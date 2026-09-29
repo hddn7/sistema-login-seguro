@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/cabecalho :: cabecalho('inicio')}"></head>
+<body>
+<nav th:replace="~{fragments/cabecalho :: navegacao}"></nav>
+<main class="conteudo hero">
+    <section>
+        <p class="eyebrow">controle de acesso</p>
+        <h1>uma entrada simples para sistemas mais seguros.</h1>
+        <p class="subtitulo">uma base modular para cadastro, autenticação e permissões. o tema pode mudar sem mexer na lógica central.</p>
+        <a class="botao" th:href="@{/login}">entrar no sistema</a>
+        <a class="botao botao-secundario" th:href="@{/cadastro}">criar conta</a>
+    </section>
+    <aside class="painel">
+        <p class="eyebrow">três níveis</p>
+        <h2>permissão no lugar certo.</h2>
+        <p>admin, professor e aluno recebem acessos diferentes pelo spring security, com sessão salva no mongodb atlas.</p>
+    </aside>
+</main>
+<footer th:replace="~{fragments/rodape :: rodape}"></footer>
+</body>
+</html>

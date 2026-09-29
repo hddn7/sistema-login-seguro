@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/cabecalho :: cabecalho('login')}"></head>
+<body>
+<nav th:replace="~{fragments/cabecalho :: navegacao}"></nav>
+<main class="conteudo">
+    <div class="painel formulario">
+        <p class="eyebrow">bem-vindo de volta</p>
+        <h1>entrar</h1>
+        <div class="mensagem" th:if="${param.cadastrado}">cadastro realizado. agora entre com seus dados.</div>
+        <div class="mensagem" th:if="${param.saiu}">voce saiu com seguranca.</div>
+        <div class="mensagem erro" th:if="${param.erro}">email ou senha incorretos.</div>
+        <form th:action="@{/login}" method="post" class="formulario">
+            <div class="campo"><label for="username">email</label><input id="username" name="username" type="email" required autofocus></div>
+            <div class="campo"><label for="password">senha</label><input id="password" name="password" type="password" required></div>
+            <button class="botao" type="submit">acessar</button>
+        </form>
+        <p>ainda nao tem conta? <a th:href="@{/cadastro}">cadastre-se</a></p>
+    </div>
+</main>
+<footer th:replace="~{fragments/rodape :: rodape}"></footer>
+</body>
+</html>

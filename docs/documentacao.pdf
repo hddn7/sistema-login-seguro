@@ -1,0 +1,129 @@
+%PDF-1.4
+1 0 obj`n<< /Type /Catalog /Pages 2 0 R >>`nendobj`n2 0 obj`n<< /Type /Pages /Kids [5 0 R 6 0 R 7 0 R 8 0 R] /Count 4 >>`nendobj`n3 0 obj`n<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>`nendobj`n4 0 obj`n<< /Producer (sistema-login) >>`nendobj`n5 0 obj
+<< /Length 363 >>
+stream
+BT
+/F1 16 Tf
+72 750 Td
+(SISTEMA DE LOGIN SEGURO) Tj
+0 -24 Td
+(DOCUMENTACAO BASICA) Tj
+0 -24 Td
+() Tj
+0 -24 Td
+(NOME DO\(A\) ALUNO\(A\)) Tj
+0 -24 Td
+(2026) Tj
+0 -24 Td
+() Tj
+0 -24 Td
+(1 INTRODUCAO) Tj
+0 -24 Td
+(Sistema modular de cadastro, autenticacao e autorizacao.) Tj
+0 -24 Td
+(A apresentacao fica separada da logica para facilitar novos temas.) Tj
+0 -24 Td
+ET
+endstream
+endobj
+6 0 obj
+<< /Length 468 >>
+stream
+BT
+/F1 16 Tf
+72 750 Td
+(2 TECNOLOGIAS E ESTRUTURA) Tj
+0 -24 Td
+(Java 17, Spring Boot, Spring Security, Thymeleaf,) Tj
+0 -24 Td
+(Spring Data MongoDB e Spring Session MongoDB.) Tj
+0 -24 Td
+() Tj
+0 -24 Td
+(Pacotes principais:) Tj
+0 -24 Td
+(configuracao: seguranca e dados iniciais.) Tj
+0 -24 Td
+(controle: rotas web.) Tj
+0 -24 Td
+(usuario: documento, repositorio e servico.) Tj
+0 -24 Td
+() Tj
+0 -24 Td
+(Templates ficam em templates e o tema em static/css.) Tj
+0 -24 Td
+ET
+endstream
+endobj
+7 0 obj
+<< /Length 404 >>
+stream
+BT
+/F1 16 Tf
+72 750 Td
+(3 SEGURANCA) Tj
+0 -24 Td
+(Senhas sao protegidas com BCryptPasswordEncoder.) Tj
+0 -24 Td
+(O login e o logout sao controlados pelo Spring Security.) Tj
+0 -24 Td
+(Perfis: ADMIN, PROFESSOR e ALUNO.) Tj
+0 -24 Td
+(A lista de usuarios exige ADMIN.) Tj
+0 -24 Td
+(A area de ensino exige ADMIN ou PROFESSOR.) Tj
+0 -24 Td
+(A sessao usa fixacao protegida e e salva no MongoDB.) Tj
+0 -24 Td
+ET
+endstream
+endobj
+8 0 obj
+<< /Length 582 >>
+stream
+BT
+/F1 16 Tf
+72 750 Td
+(4 MONGODB ATLAS E EXECUCAO) Tj
+0 -24 Td
+(A conexao usa MONGODB_URI e MONGODB_DATABASE.) Tj
+0 -24 Td
+(A colecao usuarios guarda os cadastros.) Tj
+0 -24 Td
+(A colecao sessoes guarda as sessoes HTTP.) Tj
+0 -24 Td
+(Nunca publique a URI real ou senhas no GitHub.) Tj
+0 -24 Td
+() Tj
+0 -24 Td
+(Execute com: mvn spring-boot:run) Tj
+0 -24 Td
+(Acesse: http://localhost:8080) Tj
+0 -24 Td
+() Tj
+0 -24 Td
+(5 EVOLUCAO) Tj
+0 -24 Td
+(O CSS e os fragmentos podem ser trocados sem mudar) Tj
+0 -24 Td
+(a autenticacao. Consulte o README para o Gitflow e o Atlas.) Tj
+0 -24 Td
+ET
+endstream
+endobj
+xref
+0 9
+0000000000 65535 f 
+0000000009 00000 n 
+0000000061 00000 n 
+0000000139 00000 n 
+0000000212 00000 n 
+0000000262 00000 n 
+0000000676 00000 n 
+0000001195 00000 n 
+0000001650 00000 n 
+trailer
+<< /Size 9 /Root 1 0 R >>
+startxref
+2283
+%%EOF

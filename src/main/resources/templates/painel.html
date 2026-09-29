@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="~{fragments/cabecalho :: cabecalho('painel')}"></head>
+<body>
+<nav th:replace="~{fragments/cabecalho :: navegacao}"></nav>
+<main class="conteudo">
+    <p class="eyebrow">area protegida</p>
+    <h1>ola, <span sec:authentication="name">usuario</span>.</h1>
+    <p class="subtitulo">esta pagina so aparece para usuarios autenticados. seu perfil controla as opcoes disponiveis.</p>
+    <section class="grade">
+        <article class="cartao"><span>perfil atual</span><strong sec:authorize="hasRole('ADMIN')">admin</strong><strong sec:authorize="hasRole('PROFESSOR')">professor</strong><strong sec:authorize="hasRole('ALUNO')">aluno</strong></article>
+        <article class="cartao"><span>status da sessao</span><strong>ativa</strong></article>
+        <article class="cartao"><span>protecao</span><strong>bcrypt</strong></article>
+    </section>
+    <div class="painel" sec:authorize="hasAnyRole('ADMIN', 'PROFESSOR')"><h2>area de ensino</h2><p>este bloco esta liberado para professores e administradores.</p></div>
+</main>
+<footer th:replace="~{fragments/rodape :: rodape}"></footer>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/cabecalho :: cabecalho('cadastro')}"></head>
+<body>
+<nav th:replace="~{fragments/cabecalho :: navegacao}"></nav>
+<main class="conteudo">
+    <div class="painel formulario">
+        <p class="eyebrow">novo usuario</p>
+        <h1>criar acesso</h1>
+        <div class="mensagem erro" th:if="${erroCadastro}" th:text="${erroCadastro}"></div>
+        <form th:action="@{/cadastro}" th:object="${usuarioform}" method="post" class="formulario">
+            <div class="campo"><label for="nome">nome</label><input id="nome" th:field="*{nome}" required><small th:errors="*{nome}"></small></div>
+            <div class="campo"><label for="email">email</label><input id="email" type="email" th:field="*{email}" required><small th:errors="*{email}"></small></div>
+            <div class="campo"><label for="senha">senha</label><input id="senha" type="password" th:field="*{senha}" minlength="6" required><small th:errors="*{senha}"></small></div>
+            <div class="campo"><label for="papel">perfil</label><select id="papel" th:field="*{papel}"><option value="ALUNO">aluno</option><option value="PROFESSOR">professor</option></select></div>
+            <button class="botao" type="submit">cadastrar</button>
+        </form>
+    </div>
+</main>
+<footer th:replace="~{fragments/rodape :: rodape}"></footer>
+</body>
+</html>
